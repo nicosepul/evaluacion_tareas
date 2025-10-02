@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Tareas</h1>
+    <p><a href="{% url 'tareas:tarea_create' %}">Crear nueva tarea</a></p>
+
+    <ul>
+    {% for tarea in tareas %}
+        <li>
+            <a href="{% url 'tareas:tarea_detail' tarea.pk %}">{{ tarea.titulo }}</a>
+            — Prioridad: {{ tarea.prioridad }}
+            {% if not tarea.vigente %}(Archivada){% endif %}
+        </li>
+    {% empty %}
+        <li>No hay tareas.</li>
+    {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+        {% endif %}
+        Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+        {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ object.titulo }}</h1>
+    <p>{{ object.descripcion|linebreaks }}</p>
+
+    <p>Prioridad: {{ object.prioridad }}</p>
+    <p>Vigente: {{ object.vigente }}</p>
+    <p>Creada: {{ object.fecha_creacion }}</p>
+    <p>Fecha límite: {{ object.fecha_limite }}</p>
+
+    <p>
+        <a href="{% url 'tareas:tarea_update' object.pk %}">Editar</a> |
+        <a href="{% url 'tareas:tarea_delete' object.pk %}">Eliminar</a> |
+        <a href="{% url 'tareas:tarea_list' %}">Volver a la lista</a>
+    </p>
+{% endblock %}

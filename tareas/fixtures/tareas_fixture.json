@@ -1,0 +1,39 @@
+[
+  {
+    "model": "tareas.tarea",
+    "pk": 1,
+    "fields": {
+      "titulo": "Estudiar para examen de bases de datos",
+      "descripcion": "Revisar apuntes y practicar consultas SQL.",
+      "prioridad": 2,
+      "vigente": true,
+      "fecha_limite": "2025-10-08",
+      "fecha_creacion": "2025-10-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "tareas.tarea",
+    "pk": 2,
+    "fields": {
+      "titulo": "Comprar materiales de estudio",
+      "descripcion": "Ir a la librería y comprar cuaderno, lápices y post-it.",
+      "prioridad": 1,
+      "vigente": true,
+      "fecha_limite": "2025-10-10",
+      "fecha_creacion": "2025-10-02T11:00:00Z"
+    }
+  },
+  {
+    "model": "tareas.tarea",
+    "pk": 3,
+    "fields": {
+      "titulo": "Preparar presentación de proyecto",
+      "descripcion": "Hacer diapositivas en PowerPoint y ensayar exposición.",
+      "prioridad": 3,
+      "vigente": true,
+      "fecha_limite": "2025-10-15",
+      "fecha_creacion": "2025-10-02T12:00:00Z"
+    }
+  }
+]
+
